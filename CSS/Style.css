@@ -1,0 +1,545 @@
+/* Base Styles and Animations */
+:root {
+    --primary: #3B82F6;
+    --primary-dark: #2563EB;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow: var(--hover-shadow);
+}
+
+/* 3D Button Effect */
+.btn-3d {
+    position: relative;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+}
+
+.btn-3d:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(100%) rotateX(90deg);
+    transform-origin: center bottom;
+    transition: transform 0.3s ease;
+}
+
+.btn-3d:hover {
+    transform: translateY(-2px) translateZ(0);
+}
+
+.btn-3d:hover:before {
+    transform: translateY(0) rotateX(0);
+}
+
+/* Glowing Effect for Important Elements */
+.glow-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-hover:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    transition: transform 0.6s ease-out;
+}
+
+.glow-hover:hover:after {
+    transform: scale(1);
+}
+
+/* Sidebar Navigation Effects */
+.nav-link {
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link:hover {
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    color: #2563EB;
+    background-color: #EFF6FF;
+}
+
+/* Card Flip Effect */
+.card-flip {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* Floating Animation for Cards */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Modal Animation */
+.modal-animation {
+    animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chart Hover Effects */
+.chart-container {
+    transition: transform 0.3s ease;
+}
+
+.chart-container:hover {
+    transform: scale(1.02);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Notification Badge Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.notification-badge {
+    animation: pulse 2s infinite;
+}
+
+/* Input Focus Effects */
+.input-focus {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.input-focus:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Table Row Hover Effect */
+.table-row {
+    transition: all 0.2s ease;
+}
+
+.table-row:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+    transform: translateX(5px);
+}
+
+/* Dark Mode Transition */
+.dark-mode-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Card Stack Effect */
+.card-stack {
+    position: relative;
+}
+
+.card-stack::before,
+.card-stack::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card-stack::before {
+    transform: translateY(5px) scale(0.98);
+    opacity: 0.5;
+}
+
+.card-stack::after {
+    transform: translateY(10px) scale(0.96);
+    opacity: 0.25;
+}
+
+.card-stack:hover::before {
+    transform: translateY(10px) scale(0.97);
+}
+
+.card-stack:hover::after {
+    transform: translateY(20px) scale(0.95);
+}
+
+/* SSO Button Styles */
+.sso-login-btn {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.sso-login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.sso-login-btn:active {
+    transform: translateY(0);
+}
+
+/* SSO Provider Icons */
+.sso-login-btn img {
+    transition: transform 0.3s ease;
+}
+
+.sso-login-btn:hover img {
+    transform: scale(1.1);
+}
+
+/* SSO Section Divider */
+.sso-divider {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.sso-divider::before,
+.sso-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: var(--divider-color);
+}
+
+.sso-divider::before {
+    left: 0;
+}
+
+.sso-divider::after {
+    right: 0;
+}
+
+/* Sidebar Transitions */
+#sidebar {
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.flex-1 {
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.link-text {
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Mobile Sidebar Overlay */
+.sidebar-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Active Link Styles */
+.nav-link.active {
+    background-color: #EEF2FF;
+    color: #3B82F6;
+}
+
+.dark .nav-link.active {
+    background-color: #374151;
+    color: #60A5FA;
+}
+
+/* Footer Styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+footer {
+    margin-left: 16rem; /* Match sidebar width */
+}
+
+@media (max-width: 1024px) {
+    footer {
+        margin-left: 0;
+    }
+}
+
+/* Menu Dropdown Styles */
+.menu-content {
+    transform-origin: top right;
+    transition: all 0.2s ease-out;
+}
+
+.menu-content.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.menu-content:not(.hidden) {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Social Media Icons */
+.fab {
+    font-size: 1.25rem;
+}
+
+/* Appearance Select */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,...");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+}
+
+/* Menu Animation Styles */
+.menu-content {
+    transform-origin: top right;
+    transition: all 0.2s ease-out;
+}
+
+.menu-enter {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+
+.menu-leave {
+    opacity: 0;
+    transform: scale(0.95);
+    visibility: hidden;
+}
+
+/* Ensure menu is above other content */
+#menu-container {
+    position: relative;
+    z-index: 50;
+}
+
+.menu-content {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    z-index: 51;
+}
+
+/* Fix menu width on mobile */
+@media (max-width: 640px) {
+    .menu-content {
+        width: calc(100vw - 2rem);
+        right: -1rem;
+    }
+}
+
+/* Fix sidebar z-index */
+.sidebar {
+    z-index: 40;
+}
+
+/* Ensure main content doesn't overlap */
+.main-content {
+    padding-top: 4rem; /* 64px for nav height */
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Main Content Styles */
+.main-content {
+    min-height: 100vh;
+    margin-left: 16rem; /* 256px = 16rem (sidebar width) */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.nav-link:hover {
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    color: #2563EB;
+    background-color: #EFF6FF;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Dark Mode Transitions */
+.dark .sidebar,
+.dark .main-content {
+    transition: background-color 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+}
+
+/* Dashboard layout specific */
+.dashboard-layout {
+    display: flex;
+    min-height: calc(100vh - 4rem);
+}
+
+.dashboard-sidebar {
+    width: 16rem;
+    flex-shrink: 0;
+    background: white;
+    border-right: 1px solid #e5e7eb;
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* Dark mode */
+.dark .dashboard-sidebar {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-sidebar {
+        display: none;
+    }
+    
+    .dashboard-sidebar.active {
+        display: block;
+        position: fixed;
+        top: 4rem;
+        left: 0;
+        bottom: 0;
+        z-index: 40;
+    }
+}

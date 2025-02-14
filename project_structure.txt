@@ -1,0 +1,41 @@
+.
+├── Dockerfile
+├── docker-compose.yml
+├── package.json
+├── server.js
+├── .env
+├── .dockerignore
+├── public/
+│   ├── assets/
+│   │   ├── google-icon.svg
+│   │   ├── github-icon.svg
+│   │   └── microsoft-icon.svg
+│   │   
+│   │   
+│   └── css/
+│   └── js/
+├── JS/
+│   ├── config/
+│   │   └── database.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Vote.js
+│   │   ├── Proposal.js
+│   │   └── Transaction.js
+│   ├── Login.js
+│   └── SSO.js
+├── routes/
+│   ├── authRoutes.js
+│   ├── voteRoutes.js
+│   └── proposalRoutes.js
+├── middleware/
+│   ├── auth.js
+│   └── errorHandler.js
+├── controllers/
+│   ├── authController.js
+│   ├── voteController.js
+│   └── proposalController.js
+└── views/
+    ├── Home.html
+    └── html/
+        └── DashBoard.html 

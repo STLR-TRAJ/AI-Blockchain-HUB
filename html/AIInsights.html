@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Insights - AI Blockchain Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex">
+        <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 shadow-lg">
+        <div class="flex items-center justify-center h-16 border-b dark:border-gray-700">
+            <a href="../Home.html" class="flex items-center">
+                <i class="fas fa-cube text-blue-600 text-2xl mr-2"></i>
+                <h1 class="text-xl font-bold text-gray-800 dark:text-white">AI Blockchain Hub</h1>
+            </a>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-3">
+                <a href="DashBoard.html" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                    <i class="fas fa-chart-line w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="FinancialNews.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-newspaper w-5 h-5 mr-3"></i>
+                    Financial News
+                </a>
+                <a href="PoliticalUpdates.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-globe w-5 h-5 mr-3"></i>
+                    Political Updates
+                </a>
+                <a href="Voting.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-vote-yea w-5 h-5 mr-3"></i>
+                    Voting
+                </a>
+                <a href="FinancialAnalysis.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-chart-bar w-5 h-5 mr-3"></i>
+                    Financial Analysis
+                </a>
+                <a href="BoardMeetings.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Board Meetings
+                </a>
+                <a href="AIInsights.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-brain w-5 h-5 mr-3"></i>
+                    AI Insights
+                </a>
+                <a href="Settings.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 ml-64 p-8">
+            <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">AI Insights</h1>
+            
+            <!-- AI Analysis Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-blue-500 text-xl mr-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Market Prediction</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">AI predicts a 12% market growth in the next quarter based on current trends.</p>
+                    <div class="mt-4">
+                        <span class="text-sm text-gray-500">Confidence Level:</span>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More AI insight cards -->
+            </div>
+
+            <!-- Detailed Analysis -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Trend Analysis</h3>
+                    <div class="h-80">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Risk Assessment</h3>
+                    <div class="h-80">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Recommendations -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">AI Recommendations</h2>
+                <div class="space-y-4">
+                    <!-- Recommendation items -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AI insight charts
+        const trendChart = new Chart(document.getElementById('trendChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Predicted Trend',
+                    data: [65, 59, 80, 81, 56, 55],
+                    borderColor: '#3B82F6',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const riskChart = new Chart(document.getElementById('riskChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Market', 'Credit', 'Operational', 'Liquidity', 'Legal'],
+                datasets: [{
+                    label: 'Risk Level',
+                    data: [65, 59, 90, 81, 56],
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    borderColor: '#3B82F6'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html> 

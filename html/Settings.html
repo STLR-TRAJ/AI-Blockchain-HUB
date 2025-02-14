@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Blockchain Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex">
+        <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 shadow-lg">
+        <div class="flex items-center justify-center h-16 border-b dark:border-gray-700">
+            <a href="../Home.html" class="flex items-center">
+                <i class="fas fa-cube text-blue-600 text-2xl mr-2"></i>
+                <h1 class="text-xl font-bold text-gray-800 dark:text-white">AI Blockchain Hub</h1>
+            </a>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-3">
+                <a href="DashBoard.html" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                    <i class="fas fa-chart-line w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="FinancialNews.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-newspaper w-5 h-5 mr-3"></i>
+                    Financial News
+                </a>
+                <a href="PoliticalUpdates.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-globe w-5 h-5 mr-3"></i>
+                    Political Updates
+                </a>
+                <a href="Voting.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-vote-yea w-5 h-5 mr-3"></i>
+                    Voting
+                </a>
+                <a href="FinancialAnalysis.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-chart-bar w-5 h-5 mr-3"></i>
+                    Financial Analysis
+                </a>
+                <a href="BoardMeetings.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Board Meetings
+                </a>
+                <a href="AIInsights.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-brain w-5 h-5 mr-3"></i>
+                    AI Insights
+                </a>
+                <a href="Settings.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 ml-64 p-8">
+            <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Settings</h1>
+            
+            <!-- Settings Sections -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Profile Settings -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Profile Settings</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Profile Picture</label>
+                            <div class="flex items-center space-x-4">
+                                <img src="../assets/default-avatar.png" alt="Profile" class="w-16 h-16 rounded-full">
+                                <button type="button" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Change</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                            <input type="text" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                            <input type="email" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Security Settings -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Security Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-2 text-gray-700 dark:text-gray-300">Enable Two-Factor Authentication</span>
+                            </label>
+                        </div>
+                        <div>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Change Password</button>
+                        </div>
+                        <div>
+                            <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Reset 2FA</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Notification Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-2 text-gray-700 dark:text-gray-300">Email Notifications</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-2 text-gray-700 dark:text-gray-300">Push Notifications</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-2 text-gray-700 dark:text-gray-300">SMS Alerts</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Settings -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Blockchain Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Wallet Address</label>
+                            <input type="text" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600" placeholder="Enter your wallet address">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Network</label>
+                            <select class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                                <option>Ethereum Mainnet</option>
+                                <option>Polygon</option>
+                                <option>BSC</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="mt-6 flex justify-end">
+                <button class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="passwordModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-md w-full p-6">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Change Password</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Current Password</label>
+                        <input type="password" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">New Password</label>
+                        <input type="password" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Confirm New Password</label>
+                        <input type="password" class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <div class="flex justify-end space-x-3">
+                        <button type="button" class="px-4 py-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Update Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

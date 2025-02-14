@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AI Blockchain Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../Home.html" class="flex items-center">
+                        <i class="fas fa-cube text-blue-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800 dark:text-white">AI Blockchain Hub</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../Home.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">Home</a>
+                    <a href="About.html" class="text-blue-600">About</a>
+                    <a href="FAQ.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">FAQ</a>
+                    <a href="DashBoard.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="p-8">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">About Us</h1>
+
+            <!-- Mission Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Our Mission</h2>
+                <p class="text-gray-600 dark:text-gray-400">
+                    To revolutionize the blockchain industry by integrating cutting-edge AI technology, making decentralized solutions more accessible and efficient for everyone.
+                </p>
+            </div>
+
+            <!-- Team Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Our Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Team Member Cards -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4"></div>
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">John Doe</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Founder & CEO</p>
+                    </div>
+                    <!-- Add more team members -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Contact Us</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-envelope mr-2"></i> contact@aiblockchain.com
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-phone mr-2"></i> +1 (555) 123-4567
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-map-marker-alt mr-2"></i> 123 Blockchain Street, AI City, 12345
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../JS/components/menu.js"></script>
+    <script src="../JS/menuHandler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new MenuComponent();
+            new MenuHandler();
+        });
+    </script>
+</body>
+</html> 

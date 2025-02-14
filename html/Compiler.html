@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor & Analysis - AI Blockchain Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.30.1/min/vs/loader.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../Home.html" class="flex items-center">
+                        <i class="fas fa-cube text-blue-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800 dark:text-white">AI Blockchain Hub</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="../Home.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">Home</a>
+                    <a href="About.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">About</a>
+                    <a href="FAQ.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">FAQ</a>
+                    <a href="DashBoard.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+        <div class="p-6">
+            <!-- Top Controls -->
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Code Editor & Analysis</h1>
+                    <select id="language-select" class="rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+                        <option value="solidity">Solidity</option>
+                        <option value="python">Python</option>
+                        <option value="pine">PineScript</option>
+                    </select>
+                </div>
+                <div class="flex space-x-3">
+                    <button id="template-btn" class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700">
+                        <i class="fas fa-file-code mr-2"></i>Templates
+                    </button>
+                    <button id="compile-btn" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                        <i class="fas fa-play mr-2"></i>Run
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-2 gap-6 h-[calc(100vh-8rem)]">
+                <!-- Left Panel -->
+                <div class="flex flex-col space-y-4">
+                    <!-- Code Editor -->
+                    <div class="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-4 border-b dark:border-gray-700 flex justify-between items-center">
+                            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Code Editor</h2>
+                            <div class="flex space-x-2">
+                                <button id="save-btn" class="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                                    <i class="fas fa-save"></i>
+                                </button>
+                                <button id="settings-btn" class="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="editor" class="h-full"></div>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="flex flex-col space-y-4">
+                    <!-- Output & Visualization -->
+                    <div class="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+                        <div class="p-4 border-b dark:border-gray-700">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Output & Analysis</h2>
+                                <div class="flex space-x-2">
+                                    <button id="clear-output" class="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                    <button id="export-btn" class="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2 mt-2">
+                                <button class="px-3 py-1 text-sm rounded-md bg-blue-100 text-blue-700" data-tab="output">Console</button>
+                                <button class="px-3 py-1 text-sm rounded-md bg-gray-100 text-gray-700" data-tab="chart">Chart</button>
+                                <button class="px-3 py-1 text-sm rounded-md bg-gray-100 text-gray-700" data-tab="analysis">Analysis</button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <!-- Output Tab -->
+                            <div id="output-tab" class="h-[500px] overflow-auto font-mono text-sm">
+                                <!-- Output content -->
+                            </div>
+                            <!-- Chart Tab -->
+                            <div id="chart-tab" class="hidden h-[500px]">
+                                <canvas id="analysis-chart"></canvas>
+                            </div>
+                            <!-- Analysis Tab -->
+                            <div id="analysis-tab" class="hidden h-[500px] overflow-auto">
+                                <!-- Analysis content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template Modal -->
+    <div id="template-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Code Templates</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Template cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../JS/components/menu.js"></script>
+    <script src="../JS/menuHandler.js"></script>
+    <script src="../JS/compiler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new MenuComponent();
+            new MenuHandler();
+            new CompilerHandler();
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Meetings - AI Blockchain Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex">
+        <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 shadow-lg">
+        <div class="flex items-center justify-center h-16 border-b dark:border-gray-700">
+            <a href="../Home.html" class="flex items-center">
+                <i class="fas fa-cube text-blue-600 text-2xl mr-2"></i>
+                <h1 class="text-xl font-bold text-gray-800 dark:text-white">AI Blockchain Hub</h1>
+            </a>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-3">
+                <a href="DashBoard.html" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                    <i class="fas fa-chart-line w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="FinancialNews.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-newspaper w-5 h-5 mr-3"></i>
+                    Financial News
+                </a>
+                <a href="PoliticalUpdates.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-globe w-5 h-5 mr-3"></i>
+                    Political Updates
+                </a>
+                <a href="Voting.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-vote-yea w-5 h-5 mr-3"></i>
+                    Voting
+                </a>
+                <a href="FinancialAnalysis.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-chart-bar w-5 h-5 mr-3"></i>
+                    Financial Analysis
+                </a>
+                <a href="BoardMeetings.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Board Meetings
+                </a>
+                <a href="AIInsights.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-brain w-5 h-5 mr-3"></i>
+                    AI Insights
+                </a>
+                <a href="Settings.html" class="nav-link flex items-center px-4 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 ml-64 p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Board Meetings</h1>
+                <button id="schedule-meeting-btn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                    <i class="fas fa-plus mr-2"></i>Schedule Meeting
+                </button>
+            </div>
+            
+            <!-- Upcoming Meetings -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Q2 Financial Review</h3>
+                            <p class="text-sm text-gray-500 mt-1">June 15, 2024 - 10:00 AM</p>
+                        </div>
+                        <span class="px-2 py-1 text-sm bg-green-100 text-green-800 rounded-full">Scheduled</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Quarterly financial performance review and strategy discussion.</p>
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded hover:bg-blue-200">Join</button>
+                        <button class="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded hover:bg-gray-200">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meeting Calendar -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Meeting Calendar</h2>
+                <div class="calendar-container">
+                    <!-- Calendar widget will be here -->
+                </div>
+            </div>
+
+            <!-- Past Meetings -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Meeting History</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 meeting-history">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Meeting Title</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Approval Rate</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Participation</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                            <!-- Meeting history rows will be dynamically inserted -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meeting Schedule Modal -->
+    <div id="schedule-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-2xl w-full p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Schedule New Meeting</h3>
+                    <button onclick="scheduler.hideSchedulerModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <form id="meeting-form" onsubmit="scheduler.scheduleMeeting(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Meeting Title</label>
+                            <input type="text" name="title" required
+                                class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Meeting Type</label>
+                            <select name="meeting-type" required
+                                class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                                <option value="board">Board Meeting</option>
+                                <option value="committee">Committee Meeting</option>
+                                <option value="general">General Meeting</option>
+                                <option value="special">Special Meeting</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Date</label>
+                            <input type="date" name="date" required
+                                class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Time</label>
+                            <input type="time" name="time" required
+                                class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Duration (minutes)</label>
+                            <input type="number" name="duration" min="15" step="15" value="60" required
+                                class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Participants (emails)</label>
+                            <input type="text" name="participants" placeholder="email1@example.com, email2@example.com" required
+                                class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                        <textarea name="description" rows="3" required
+                            class="w-full px-3 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600"></textarea>
+                    </div>
+
+                    <div class="flex justify-end space-x-3 mt-6">
+                        <button type="button" onclick="scheduler.hideSchedulerModal()"
+                            class="px-4 py-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                            Cancel
+                        </button>
+                        <button type="submit"
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            Schedule Meeting
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../JS/components/meetingScheduler.js"></script>
+    <script src="../JS/components/meetingHistoryHandler.js"></script>
+    <script>
+        let scheduler;
+        let historyHandler;
+        document.addEventListener('DOMContentLoaded', () => {
+            scheduler = new MeetingScheduler();
+            historyHandler = new MeetingHistoryHandler();
+        });
+    </script>
+</body>
+</html> 
