@@ -156,7 +156,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+Your Name - [@Tejust_412](https://x.com/Tejust_412) - tejaspatil4112@gmail.com
 
 Project Link: [https://github.com/your-username/ai-blockchain-hub](https://github.com/your-username/ai-blockchain-hub)
 
