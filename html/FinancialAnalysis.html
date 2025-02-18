@@ -60,77 +60,56 @@
         
         <!-- Main Content -->
         <div class="flex-1 ml-64 p-8">
-            <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Financial Analysis</h1>
-            
-            <!-- Key Metrics -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                    <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Portfolio Value</h3>
-                    <p class="text-2xl font-bold text-gray-800 dark:text-white mt-2">$2.4M</p>
-                    <span class="text-green-500 text-sm"><i class="fas fa-arrow-up mr-1"></i>3.2%</span>
-                </div>
-                <!-- More metric cards -->
-            </div>
+            <div class="max-w-7xl mx-auto">
+                <!-- Market Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Market Summary</h3>
+                        <div id="market-summary" class="space-y-4">
+                            <!-- Market summary content -->
+                        </div>
+                    </div>
 
-            <!-- Charts -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Portfolio Performance</h3>
-                    <div class="h-80">
-                        <canvas id="portfolioChart"></canvas>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Technical Analysis</h3>
+                        <canvas id="technicalChart"></canvas>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">AI Predictions</h3>
+                        <div id="ai-predictions" class="space-y-4">
+                            <!-- AI predictions content -->
+                        </div>
                     </div>
                 </div>
-                
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Asset Allocation</h3>
-                    <div class="h-80">
-                        <canvas id="allocationChart"></canvas>
+
+                <!-- Sector Analysis -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Sector Performance</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <canvas id="sectorChart"></canvas>
+                        <div id="sector-details" class="space-y-4">
+                            <!-- Sector details content -->
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Recent Transactions -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Recent Transactions</h2>
-                <div class="overflow-x-auto">
-                    <!-- Transaction table -->
+                <!-- News Feed -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Financial News</h3>
+                    <div id="news-feed" class="space-y-4">
+                        <!-- News feed content -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="../JS/components/financialAnalysisHandler.js"></script>
     <script>
-        // Initialize charts
-        const portfolioChart = new Chart(document.getElementById('portfolioChart'), {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Portfolio Value',
-                    data: [1000000, 1200000, 1150000, 1300000, 1250000, 1400000],
-                    borderColor: '#10B981',
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
-            }
-        });
-
-        const allocationChart = new Chart(document.getElementById('allocationChart'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Stocks', 'Bonds', 'Crypto', 'Cash'],
-                datasets: [{
-                    data: [40, 30, 20, 10],
-                    backgroundColor: ['#10B981', '#3B82F6', '#F59E0B', '#6B7280']
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            new FinancialAnalysisHandler();
         });
     </script>
 </body>

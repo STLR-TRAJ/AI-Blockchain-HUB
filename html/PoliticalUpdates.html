@@ -59,27 +59,53 @@
         
         <!-- Main Content -->
         <div class="flex-1 ml-64 p-8">
-            <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Political Updates</h1>
-            
-            <!-- Categories -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">National News</h3>
-                    <!-- National news content -->
+            <div class="max-w-7xl mx-auto">
+                <!-- Header -->
+                <div class="mb-8">
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Political Updates</h1>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Real-time political news and analysis powered by AI
+                    </p>
                 </div>
-                
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Global News</h3>
-                    <!-- Global news content -->
+
+                <!-- Filters -->
+                <div id="news-filters" class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                                Region
+                            </label>
+                            <select class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700">
+                                <option value="">All Regions</option>
+                                <option value="North America">North America</option>
+                                <option value="Europe">Europe</option>
+                                <option value="Asia">Asia</option>
+                                <!-- Add more options -->
+                            </select>
+                        </div>
+                        <!-- Add more filters -->
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Timeline -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Political Timeline</h2>
-                <!-- Timeline content -->
+
+                <!-- News Content -->
+                <div id="news-container" class="space-y-6">
+                    <!-- News items will be dynamically inserted here -->
+                </div>
+
+                <!-- Analysis Section -->
+                <div id="analysis-container" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Charts and analysis will be dynamically inserted here -->
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="../JS/components/politicalNewsHandler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new PoliticalNewsHandler();
+        });
+    </script>
 </body>
 </html> 

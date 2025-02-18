@@ -1,39 +1,36 @@
 version: '3.8'
 
 services:
-  app:
-    build: .
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://backend:5000/api
+      - REACT_APP_WS_URL=ws://backend:5000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     environment:
+      - MONGODB_URI=mongodb://mongodb:27017/ai_blockchain_hub
       - NODE_ENV=development
-      - MONGODB_URI=mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@your-cluster.mongodb.net/ai_blockchain_hub
-    env_file:
-      - .env
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    networks:
-      - app-network
+    depends_on:
+      - mongodb
 
   mongodb:
     image: mongo:latest
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
-      MONGO_INITDB_DATABASE: ai_blockchain_hub
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
-      - ./JS/config/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
 
 volumes:
   mongodb_data: 
