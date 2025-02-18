@@ -2,7 +2,7 @@
 
 A comprehensive platform that revolutionizes organizational governance by combining artificial intelligence with blockchain technology. This platform enables secure voting, real-time analytics, and transparent decision-making processes.
 
-![Project Banner](path_to_banner_image.png) <!-- You can add a project banner image later -->
+![AI Blockchain Hub](https://github.com/user-attachments/assets/643dd54b-d564-4749-8b6f-71754a27d11a) <!-- You can add a project banner image later -->
 
 ## 🌟 Features
 
@@ -156,7 +156,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+Your Name - [@Tejust_412](https://x.com/Tejust_412) - tejaspatil4112@gmail.com
 
 Project Link: [https://github.com/your-username/ai-blockchain-hub](https://github.com/your-username/ai-blockchain-hub)
 
